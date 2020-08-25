@@ -1,40 +1,33 @@
 # Wykaz zmian
 
-## Wersja 2.2 - 2022-08-07
+## Wersja 2.3 - 2022-08-25
 
-### Zmiany w arkuszu 
+### Zmiany w pliku
 
-#### *Zmiany nazw pól*
+Usunięto arkusz "Akronimy" \
+Zmieniono formatowanie wykazu krajów \
 
-OrigTaxonName -> VerbatimTaxonName\
-OrigLabelText -> VerbatimSourceText\
-OrigLocality -> VerbatimLocalityText\
-OrigLocalityLanguage -> VerbatimLocalityLanguage\
-AssociatedSpeciesRecordCode -> AssociatedSpeciesRecordID\
-DateText -> VerbatimDateText
+### Zmiany w metadanych
 
-#### *Nowe pole*
+#### *Nowe pola*
 
-VerbatimSourceTextScheme\
+Numer Zadania - obowiązkowe \
+Identyfikator Działania - obowiązkowe \
 
 ### Zmiany w makrach
 
-#### *Makro 0*
+#### *Makro 1*
 
-Walidacja danych prawidłowych zwraca komunikat "Dane są poprawne!".
+1. Dodano opcję eksportu do CSV całego zakresu, jeśli zaznaczony jest tylko jeden wiersz - dialog TAK/NIE/Anuluj "Czy eksportować do CSV cały zakres? Odpowiedź NIE oznacza tylko bieżący wiersz."
+1. Zmieniono drugi wiersz przycisku na "Drukowanie etykiet (csv)"
 
 #### *Makro 2*
 
-Nazwa pliku eksportu wg schematu *imbio-wfd-[nr partnera z zerem wiodącymi]-[prefiks]-[data]-[godzina]*.
-
-#### *Makro 3*
-
-Korekta liczby zer wiodących w BarcodeID (łącznie 6 miejsc).
+1. Do pliku eksportu kopiowany jest także arkusz metadanych w wersji czystego tekstu (bez formuł).
+1. Zmieniono drugi wiersz przycisku na "Zapis dla IMBIO (xlsx)"
 
 #### *Reguły walidacji (makra 0, 1, 2)*
 
-1. Dodane sprawdzanie pól *Contributor* i *RecordBasis*. 
+##### *Metadane*
 
-2. Puste komórki w sprawdzanych kolumnach zmieniają wypełnienie na kolor żółty. 
-
-3. Metadane - sprawdzenie kompletności zwraca wykaz pustych pól, które należy wypełnić.
+1. Pole "Identyfikator kolekcji" jest opcjonalne, a nie obowiązkowe. Walidacja kompletności sprawdza "Nazwa kolekcji", a nie "Identyfikator kolekcji"
